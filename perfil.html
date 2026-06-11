@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniConnect - Mi Perfil</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="dashboard-body">
+
+  <header class="topbar">
+    <div>
+      <h2>UniConnect</h2>
+      <p>Perfil del usuario</p>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="backBtn" class="secondary-btn">Volver</button>
+      <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+
+    <section class="welcome-card">
+      <h1>Mi perfil</h1>
+      <p>Consulta y actualiza tu información personal dentro del sistema.</p>
+    </section>
+
+    <section class="profile-layout">
+
+      <div class="profile-card">
+        <img id="profilePhotoPreview" class="profile-photo-large" src="" alt="Foto de perfil">
+
+        <h2 id="profileName">Nombre del usuario</h2>
+        <p id="profileRole">Rol</p>
+
+        <div class="profile-info-mini">
+          <span id="profileArea">Área</span>
+          <span id="profileEmail">Correo</span>
+        </div>
+      </div>
+
+      <section class="form-section profile-form-section">
+        <h2>Datos personales</h2>
+
+        <form id="profileForm" class="user-form">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombrePerfil">Nombres y apellidos</label>
+              <input type="text" id="nombrePerfil" required>
+            </div>
+
+            <div class="form-group">
+              <label for="dniPerfil">DNI</label>
+              <input type="text" id="dniPerfil" disabled>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="emailPerfil">Correo institucional</label>
+              <input type="email" id="emailPerfil" required>
+            </div>
+
+            <div class="form-group">
+              <label for="rolPerfil">Rol</label>
+              <input type="text" id="rolPerfil" disabled>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="areaPerfil">Área académica</label>
+              <select id="areaPerfil" required>
+                <option value="Administración">Administración</option>
+                <option value="Ingenierías">Ingenierías</option>
+                <option value="Ciencias de la Salud">Ciencias de la Salud</option>
+                <option value="Humanidades">Humanidades</option>
+                <option value="Ciencias Empresariales">Ciencias Empresariales</option>
+                <option value="Educación">Educación</option>
+                <option value="Seguridad Universitaria">Seguridad Universitaria</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="aulaPerfil">Aula / Curso / Sección</label>
+              <input type="text" id="aulaPerfil" placeholder="Ejemplo: Enfermería I">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="fotoPerfil">Actualizar foto de perfil</label>
+            <input type="file" id="fotoPerfil" accept="image/*">
+          </div>
+
+          <button type="submit">Guardar cambios</button>
+        </form>
+
+        <p id="profileMessage" class="message"></p>
+      </section>
+
+    </section>
+
+    <section class="form-section">
+      <h2>Cambiar contraseña</h2>
+
+      <form id="passwordForm" class="user-form">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="passwordActual">Contraseña actual</label>
+            <input type="password" id="passwordActual" required>
+          </div>
+
+          <div class="form-group">
+            <label for="passwordNueva">Nueva contraseña</label>
+            <input type="password" id="passwordNueva" minlength="6" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="passwordConfirmar">Confirmar nueva contraseña</label>
+          <input type="password" id="passwordConfirmar" minlength="6" required>
+        </div>
+
+        <button type="submit">Cambiar contraseña</button>
+      </form>
+
+      <p id="passwordMessage" class="message"></p>
+    </section>
+
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/perfil.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniConnect - Notificaciones</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="dashboard-body">
+
+  <header class="topbar">
+    <div>
+      <h2>UniConnect</h2>
+      <p>Notificaciones y comunicados</p>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="backBtn" class="secondary-btn">Volver</button>
+      <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+
+    <section class="welcome-card">
+      <h1>Módulo de Notificaciones</h1>
+      <p>Envía y consulta comunicados globales, por área académica o por curso.</p>
+    </section>
+
+    <section id="notificationFormSection" class="form-section">
+      <h2>Crear comunicado</h2>
+
+      <form id="notificationForm" class="user-form">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="tituloNotificacion">Título</label>
+            <input type="text" id="tituloNotificacion" placeholder="Ejemplo: Examen parcial" required>
+          </div>
+
+          <div class="form-group">
+            <label for="prioridadNotificacion">Prioridad</label>
+            <select id="prioridadNotificacion" required>
+              <option value="Normal">Normal</option>
+              <option value="Importante">Importante</option>
+              <option value="Urgente">Urgente</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nivelNotificacion">Nivel del comunicado</label>
+            <select id="nivelNotificacion" required>
+              <option value="Global">Global</option>
+              <option value="Área">Área académica</option>
+              <option value="Curso">Curso / Aula</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="areaNotificacion">Área académica</label>
+            <select id="areaNotificacion">
+              <option value="">No aplica</option>
+              <option value="Administración">Administración</option>
+              <option value="Ingenierías">Ingenierías</option>
+              <option value="Ciencias de la Salud">Ciencias de la Salud</option>
+              <option value="Humanidades">Humanidades</option>
+              <option value="Ciencias Empresariales">Ciencias Empresariales</option>
+              <option value="Educación">Educación</option>
+              <option value="Seguridad Universitaria">Seguridad Universitaria</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cursoNotificacion">Curso / Aula</label>
+          <input type="text" id="cursoNotificacion" placeholder="Ejemplo: Matemática I / Aula 302">
+        </div>
+
+        <div class="form-group">
+          <label for="mensajeNotificacion">Mensaje</label>
+          <textarea id="mensajeNotificacion" rows="5" placeholder="Escribe el comunicado..." required></textarea>
+        </div>
+
+        <button type="submit">Publicar comunicado</button>
+      </form>
+
+      <p id="notificationMessage" class="message"></p>
+    </section>
+
+    <section class="table-section">
+      <h2>Comunicados visibles para mi usuario</h2>
+
+      <div class="notification-summary">
+        <div>
+          <strong id="totalNotifications">0</strong>
+          <span>Total</span>
+        </div>
+
+        <div>
+          <strong id="unreadNotifications">0</strong>
+          <span>No leídos</span>
+        </div>
+
+        <div>
+          <strong id="urgentNotifications">0</strong>
+          <span>Urgentes</span>
+        </div>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="searchNotification" placeholder="Buscar por título, mensaje, área, curso o prioridad...">
+      </div>
+
+      <div id="notificationsList" class="notifications-list">
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/notificaciones.js"></script>
+</body>
+</html>

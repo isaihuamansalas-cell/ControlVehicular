@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniConnect - Notas y Rendimiento</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="dashboard-body">
+
+  <header class="topbar">
+    <div>
+      <h2>UniConnect</h2>
+      <p>Notas y semáforo académico</p>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="backBtn" class="secondary-btn">Volver</button>
+      <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+
+    <section class="welcome-card">
+      <h1>Módulo de Notas y Rendimiento</h1>
+      <p>Registra notas, calcula promedios y clasifica el estado académico de cada alumno.</p>
+    </section>
+
+    <section id="gradesFormSection" class="form-section">
+      <h2>Registrar notas del alumno</h2>
+
+      <form id="gradesForm" class="user-form">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dniAlumnoNota">DNI del alumno</label>
+            <input type="text" id="dniAlumnoNota" maxlength="8" required>
+          </div>
+
+          <div class="form-group">
+            <label for="nombreAlumnoNota">Nombre del alumno</label>
+            <input type="text" id="nombreAlumnoNota" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="areaAlumnoNota">Área académica</label>
+            <input type="text" id="areaAlumnoNota" required>
+          </div>
+
+          <div class="form-group">
+            <label for="cursoNota">Curso</label>
+            <input type="text" id="cursoNota" placeholder="Ejemplo: Matemática I" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nota1">Nota 1</label>
+            <input type="number" id="nota1" min="0" max="20" step="0.1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="nota2">Nota 2</label>
+            <input type="number" id="nota2" min="0" max="20" step="0.1" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nota3">Nota 3</label>
+            <input type="number" id="nota3" min="0" max="20" step="0.1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="notaMinima">Nota mínima aprobatoria</label>
+            <input type="number" id="notaMinima" min="0" max="20" step="0.1" value="11" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="observacionNota">Observación académica</label>
+          <input type="text" id="observacionNota" placeholder="Ejemplo: requiere reforzamiento en prácticas">
+        </div>
+
+        <button type="submit">Guardar notas</button>
+      </form>
+
+      <p id="gradesMessage" class="message"></p>
+    </section>
+
+    <section class="table-section">
+      <h2>Rendimiento académico registrado</h2>
+
+      <div class="search-box">
+        <input type="text" id="searchGrades" placeholder="Buscar por alumno, DNI, curso, área o estado...">
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Alumno</th>
+              <th>DNI</th>
+              <th>Área</th>
+              <th>Curso</th>
+              <th>Nota 1</th>
+              <th>Nota 2</th>
+              <th>Nota 3</th>
+              <th>Promedio</th>
+              <th>Faltas</th>
+              <th>Estado</th>
+              <th>Observación</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+
+          <tbody id="gradesTableBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/notas.js"></script>
+</body>
+</html>

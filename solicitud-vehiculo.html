@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniConnect - Solicitud Vehicular</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="dashboard-body">
+
+  <header class="topbar">
+    <div>
+      <h2>UniConnect</h2>
+      <p>Solicitud de registro vehicular</p>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="backBtn" class="secondary-btn">Volver</button>
+      <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+
+    <section class="welcome-card">
+      <h1>Solicitar registro de vehículo</h1>
+      <p>
+        Completa los datos de tu vehículo. La solicitud será revisada por administración
+        antes de autorizar el ingreso al campus.
+      </p>
+    </section>
+
+    <section class="form-section">
+      <h2>Datos del solicitante</h2>
+
+      <div class="vehicle-data-grid">
+        <div>
+          <strong>Alumno</strong>
+          <span id="studentName">-</span>
+        </div>
+
+        <div>
+          <strong>DNI</strong>
+          <span id="studentDni">-</span>
+        </div>
+
+        <div>
+          <strong>Área</strong>
+          <span id="studentArea">-</span>
+        </div>
+
+        <div>
+          <strong>Correo</strong>
+          <span id="studentEmail">-</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <h2>Datos del vehículo</h2>
+
+      <form id="vehicleRequestForm" class="user-form">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="placaSolicitud">Número de placa</label>
+            <input type="text" id="placaSolicitud" placeholder="Ejemplo: ABC-123" required>
+          </div>
+
+          <div class="form-group">
+            <label for="tipoSolicitud">Tipo de vehículo</label>
+            <select id="tipoSolicitud" required>
+              <option value="">Seleccione una opción</option>
+              <option value="Auto">Auto</option>
+              <option value="Moto">Moto</option>
+              <option value="Camioneta">Camioneta</option>
+              <option value="Bicicleta">Bicicleta</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="marcaSolicitud">Marca</label>
+            <input type="text" id="marcaSolicitud" placeholder="Ejemplo: Toyota" required>
+          </div>
+
+          <div class="form-group">
+            <label for="modeloSolicitud">Modelo</label>
+            <input type="text" id="modeloSolicitud" placeholder="Ejemplo: Corolla" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="colorSolicitud">Color</label>
+            <input type="text" id="colorSolicitud" placeholder="Ejemplo: Blanco" required>
+          </div>
+
+          <div class="form-group">
+            <label for="observacionSolicitud">Observación</label>
+            <input type="text" id="observacionSolicitud" placeholder="Ejemplo: uso diario para clases">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fotoVehiculoSolicitud">Foto del vehículo</label>
+            <input type="file" id="fotoVehiculoSolicitud" accept="image/*">
+          </div>
+
+          <div class="form-group">
+            <label for="fotoPlacaSolicitud">Foto de la placa</label>
+            <input type="file" id="fotoPlacaSolicitud" accept="image/*">
+          </div>
+        </div>
+
+        <button type="submit">Enviar solicitud</button>
+      </form>
+
+      <p id="requestMessage" class="message"></p>
+    </section>
+
+    <section class="table-section">
+      <h2>Mis solicitudes vehiculares</h2>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Placa</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Tipo</th>
+              <th>Estado</th>
+              <th>Observación</th>
+            </tr>
+          </thead>
+
+          <tbody id="myRequestsTableBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/solicitud-vehiculo.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniConnect - Mi Vehículo</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="dashboard-body">
+
+  <header class="topbar">
+    <div>
+      <h2>UniConnect</h2>
+      <p>Consulta de vehículo del alumno</p>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="backBtn" class="secondary-btn">Volver</button>
+      <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+
+    <section class="welcome-card">
+      <h1>Mi vehículo</h1>
+      <p>Consulta el estado de autorización de tu vehículo registrado en el campus universitario.</p>
+    </section>
+
+    <section id="noVehicleMessage" class="form-section hidden">
+      <h2>No tienes vehículo registrado</h2>
+      <p>
+        Actualmente no se encontró ningún vehículo vinculado a tu DNI.
+        Si necesitas registrar uno, comunícate con el área administrativa o seguridad universitaria.
+      </p>
+    </section>
+
+    <section id="myVehicleSection" class="my-vehicle-layout hidden">
+
+      <div class="my-vehicle-main-card">
+        <div class="vehicle-image-wrapper">
+          <img id="myVehiclePhoto" class="my-vehicle-photo" src="" alt="Foto del vehículo">
+        </div>
+
+        <div class="my-vehicle-content">
+          <span id="myVehicleStatus" class="status-badge"></span>
+
+          <h2 id="myVehiclePlate">Placa</h2>
+
+          <p id="myVehicleOwner">Propietario</p>
+
+          <div class="vehicle-data-grid">
+            <div>
+              <strong>Marca</strong>
+              <span id="myVehicleBrand">-</span>
+            </div>
+
+            <div>
+              <strong>Modelo</strong>
+              <span id="myVehicleModel">-</span>
+            </div>
+
+            <div>
+              <strong>Color</strong>
+              <span id="myVehicleColor">-</span>
+            </div>
+
+            <div>
+              <strong>Tipo</strong>
+              <span id="myVehicleType">-</span>
+            </div>
+
+            <div>
+              <strong>DNI</strong>
+              <span id="myVehicleDni">-</span>
+            </div>
+
+            <div>
+              <strong>Área</strong>
+              <span id="myVehicleArea">-</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="form-section">
+        <h2>Foto de placa</h2>
+        <img id="myPlatePhoto" class="my-plate-photo" src="" alt="Foto de placa">
+      </section>
+
+      <section class="form-section">
+        <h2>Observaciones de seguridad</h2>
+        <p id="myVehicleObservation" class="observation-box">Sin observaciones.</p>
+      </section>
+
+    </section>
+
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/mi-vehiculo.js"></script>
+</body>
+</html>

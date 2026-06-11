@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniConnect - Marketplace</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="dashboard-body">
+
+  <header class="topbar">
+    <div>
+      <h2>UniConnect</h2>
+      <p>Marketplace universitario</p>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="backBtn" class="secondary-btn">Volver</button>
+      <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+
+    <section class="welcome-card">
+      <h1>Hub de Emprendimiento Universitario</h1>
+      <p>Publica, busca y contacta emprendimientos dentro del campus universitario.</p>
+    </section>
+
+    <section id="marketFormSection" class="form-section">
+      <h2>Publicar producto o servicio</h2>
+
+      <form id="marketForm" class="user-form">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombreProducto">Nombre del producto o servicio</label>
+            <input type="text" id="nombreProducto" placeholder="Ejemplo: Brownies caseros" required>
+          </div>
+
+          <div class="form-group">
+            <label for="precioProducto">Precio</label>
+            <input type="number" id="precioProducto" min="0" step="0.10" placeholder="Ejemplo: 5.00" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="categoriaProducto">Categoría</label>
+            <select id="categoriaProducto" required>
+              <option value="">Seleccione categoría</option>
+              <option value="Comida">Comida</option>
+              <option value="Postres">Postres</option>
+              <option value="Bebidas">Bebidas</option>
+              <option value="Servicios académicos">Servicios académicos</option>
+              <option value="Impresiones">Impresiones</option>
+              <option value="Manualidades">Manualidades</option>
+              <option value="Accesorios">Accesorios</option>
+              <option value="Otros">Otros</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="estadoTienda">Estado de disponibilidad</label>
+            <select id="estadoTienda" required>
+              <option value="Abierto">Abierto</option>
+              <option value="Cerrado">Cerrado</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="whatsappProducto">WhatsApp</label>
+            <input type="text" id="whatsappProducto" placeholder="Ejemplo: 51999999999" required>
+          </div>
+
+          <div class="form-group">
+            <label for="ubicacionProducto">Ubicación en campus</label>
+            <input type="text" id="ubicacionProducto" placeholder="Ejemplo: Pabellón B, primer piso" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="descripcionProducto">Descripción</label>
+          <textarea id="descripcionProducto" rows="4" placeholder="Describe tu producto o servicio..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="fotoProducto">Foto del producto</label>
+          <input type="file" id="fotoProducto" accept="image/*">
+        </div>
+
+        <button type="submit">Publicar producto</button>
+      </form>
+
+      <p id="marketMessage" class="message"></p>
+    </section>
+
+    <section class="table-section">
+      <h2>Productos y servicios disponibles</h2>
+
+      <div class="market-filters">
+        <input type="text" id="searchMarket" placeholder="Buscar por producto, vendedor, área o ubicación...">
+
+        <select id="filterCategory">
+          <option value="">Todas las categorías</option>
+          <option value="Comida">Comida</option>
+          <option value="Postres">Postres</option>
+          <option value="Bebidas">Bebidas</option>
+          <option value="Servicios académicos">Servicios académicos</option>
+          <option value="Impresiones">Impresiones</option>
+          <option value="Manualidades">Manualidades</option>
+          <option value="Accesorios">Accesorios</option>
+          <option value="Otros">Otros</option>
+        </select>
+
+        <select id="filterStatus">
+          <option value="">Todos los estados</option>
+          <option value="Abierto">Abierto</option>
+          <option value="Cerrado">Cerrado</option>
+        </select>
+      </div>
+
+      <div id="marketGrid" class="market-grid">
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/marketplace.js"></script>
+</body>
+</html>

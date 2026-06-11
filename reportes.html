@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniConnect - Reportes</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="dashboard-body">
+
+  <header class="topbar">
+    <div>
+      <h2>UniConnect</h2>
+      <p>Reportes ejecutivos</p>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="backBtn" class="secondary-btn">Volver</button>
+      <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+
+    <section class="welcome-card">
+      <h1>Módulo de Reportes Ejecutivos</h1>
+      <p>Consulta información general del sistema y exporta reportes en formato CSV.</p>
+    </section>
+
+    <section class="report-summary">
+      <div class="summary-card">
+        <h3 id="totalUsuarios">0</h3>
+        <p>Usuarios registrados</p>
+      </div>
+
+      <div class="summary-card">
+        <h3 id="totalVehiculos">0</h3>
+        <p>Vehículos registrados</p>
+      </div>
+
+      <div class="summary-card">
+        <h3 id="totalAsistencias">0</h3>
+        <p>Asistencias registradas</p>
+      </div>
+
+      <div class="summary-card">
+        <h3 id="totalRiesgo">0</h3>
+        <p>Alumnos en riesgo</p>
+      </div>
+
+      <div class="summary-card">
+        <h3 id="totalProductos">0</h3>
+        <p>Productos publicados</p>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <h2>Generar reporte</h2>
+
+      <div class="report-controls">
+        <div class="form-group">
+          <label for="tipoReporte">Tipo de reporte</label>
+          <select id="tipoReporte">
+            <option value="usuarios">Usuarios registrados</option>
+            <option value="vehiculos">Vehículos registrados</option>
+            <option value="asistencias">Asistencias registradas</option>
+            <option value="notas">Notas y rendimiento</option>
+            <option value="riesgo">Alumnos en riesgo académico</option>
+            <option value="marketplace">Marketplace universitario</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="filtroReporte">Filtro rápido</label>
+          <input type="text" id="filtroReporte" placeholder="Buscar por nombre, DNI, área, curso, placa...">
+        </div>
+
+        <div class="report-buttons">
+          <button id="previewReportBtn" type="button">Vista previa</button>
+          <button id="exportReportBtn" type="button" class="secondary-btn">Exportar CSV</button>
+        </div>
+      </div>
+
+      <p id="reportMessage" class="message"></p>
+    </section>
+
+    <section class="table-section">
+      <h2>Vista previa del reporte</h2>
+
+      <div class="table-container">
+        <table id="reportTable">
+          <thead id="reportTableHead">
+          </thead>
+
+          <tbody id="reportTableBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/reportes.js"></script>
+</body>
+</html>
