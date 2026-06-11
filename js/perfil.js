@@ -54,7 +54,7 @@ function cargarDatosPerfil(usuario) {
   document.getElementById("dniPerfil").value = usuario.dni || "";
   document.getElementById("emailPerfil").value = usuario.email || "";
   document.getElementById("rolPerfil").value = usuario.rol || "";
-  document.getElementById("areaPerfil").value = usuario.area || "";
+  llenarSelectAreas("areaPerfil", "Seleccione un área", usuario.area || "");
   document.getElementById("aulaPerfil").value = usuario.aula || "";
 
   const foto = usuario.foto || generarFotoPerfilPlaceholder();

@@ -29,6 +29,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const userForm = document.getElementById("userForm");
   const searchUser = document.getElementById("searchUser");
 
+  
+  llenarSelectAreas("area", "Seleccione un área");
+
   cargarUsuarios();
 
   userForm.addEventListener("submit", function(event) {

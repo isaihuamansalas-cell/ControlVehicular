@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniConnect - Incidencias de Seguridad</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="dashboard-body">
+
+  <header class="topbar">
+    <div>
+      <h2>UniConnect</h2>
+      <p>Incidencias de seguridad</p>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="backBtn" class="secondary-btn">Volver</button>
+      <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+
+    <section class="welcome-card">
+      <h1>Módulo de Incidencias</h1>
+      <p>Registra y consulta sucesos relacionados con seguridad, control vehicular o convivencia dentro del campus.</p>
+    </section>
+
+    <section class="report-summary">
+      <div class="summary-card">
+        <h3 id="totalIncidencias">0</h3>
+        <p>Total incidencias</p>
+      </div>
+
+      <div class="summary-card">
+        <h3 id="totalAbiertas">0</h3>
+        <p>Abiertas</p>
+      </div>
+
+      <div class="summary-card">
+        <h3 id="totalRevision">0</h3>
+        <p>En revisión</p>
+      </div>
+
+      <div class="summary-card">
+        <h3 id="totalCerradas">0</h3>
+        <p>Cerradas</p>
+      </div>
+    </section>
+
+    <section id="incidentFormSection" class="form-section">
+      <h2>Registrar nueva incidencia</h2>
+
+      <form id="incidentForm" class="user-form">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fechaIncidencia">Fecha</label>
+            <input type="date" id="fechaIncidencia" required>
+          </div>
+
+          <div class="form-group">
+            <label for="tipoIncidencia">Tipo de incidencia</label>
+            <select id="tipoIncidencia" required>
+              <option value="">Seleccione una opción</option>
+              <option value="Ingreso no autorizado">Ingreso no autorizado</option>
+              <option value="Placa sospechosa">Placa sospechosa</option>
+              <option value="Vehículo mal estacionado">Vehículo mal estacionado</option>
+              <option value="Vehículo restringido">Vehículo restringido</option>
+              <option value="Pérdida de objeto">Pérdida de objeto</option>
+              <option value="Alteración del orden">Alteración del orden</option>
+              <option value="Observación de conducta">Observación de conducta</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="placaIncidencia">Placa relacionada</label>
+            <input type="text" id="placaIncidencia" placeholder="Opcional. Ejemplo: ABC-123">
+          </div>
+
+          <div class="form-group">
+            <label for="dniIncidencia">DNI relacionado</label>
+            <input type="text" id="dniIncidencia" maxlength="8" placeholder="Opcional">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="personaIncidencia">Persona relacionada</label>
+            <input type="text" id="personaIncidencia" placeholder="Opcional">
+          </div>
+
+          <div class="form-group">
+            <label for="ubicacionIncidencia">Ubicación</label>
+            <input type="text" id="ubicacionIncidencia" placeholder="Ejemplo: Puerta principal / Pabellón B" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prioridadIncidencia">Prioridad</label>
+            <select id="prioridadIncidencia" required>
+              <option value="Normal">Normal</option>
+              <option value="Importante">Importante</option>
+              <option value="Urgente">Urgente</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="estadoIncidencia">Estado</label>
+            <select id="estadoIncidencia" required>
+              <option value="Abierta">Abierta</option>
+              <option value="En revisión">En revisión</option>
+              <option value="Cerrada">Cerrada</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="descripcionIncidencia">Descripción de la incidencia</label>
+          <textarea id="descripcionIncidencia" rows="5" placeholder="Describe lo ocurrido..." required></textarea>
+        </div>
+
+        <button type="submit">Guardar incidencia</button>
+      </form>
+
+      <p id="incidentMessage" class="message"></p>
+    </section>
+
+    <section class="table-section">
+      <h2>Incidencias registradas</h2>
+
+      <div class="market-filters">
+        <input type="text" id="searchIncident" placeholder="Buscar por tipo, placa, DNI, persona, ubicación o descripción...">
+
+        <select id="filterIncidentStatus">
+          <option value="">Todos los estados</option>
+          <option value="Abierta">Abierta</option>
+          <option value="En revisión">En revisión</option>
+          <option value="Cerrada">Cerrada</option>
+        </select>
+
+        <select id="filterIncidentPriority">
+          <option value="">Todas las prioridades</option>
+          <option value="Normal">Normal</option>
+          <option value="Importante">Importante</option>
+          <option value="Urgente">Urgente</option>
+        </select>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Tipo</th>
+              <th>Placa</th>
+              <th>DNI</th>
+              <th>Persona</th>
+              <th>Ubicación</th>
+              <th>Prioridad</th>
+              <th>Estado</th>
+              <th>Registrado por</th>
+              <th>Descripción</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+
+          <tbody id="incidentsTableBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/incidencias.js"></script>
+</body>
+</html>

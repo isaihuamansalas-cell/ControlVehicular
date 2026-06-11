@@ -205,6 +205,20 @@ function obtenerOpcionesPorRol(usuario) {
         disponible: true
       },
       {
+  titulo: "Vehículos restringidos",
+  descripcion: "Supervisar vehículos restringidos, pendientes e incidencias asociadas.",
+  enlace: "vehiculos-restringidos.html",
+  icono: "⛔",
+  disponible: true
+},
+      {
+  titulo: "Incidencias de seguridad",
+  descripcion: "Revisar incidencias registradas por el personal de seguridad.",
+  enlace: "incidencias.html",
+  icono: "⚠️",
+  disponible: true
+},
+      {
         titulo: "Asistencia digital",
         descripcion: "Consultar y gestionar registros de asistencia con firma.",
         enlace: "asistencia.html",
@@ -242,9 +256,9 @@ function obtenerOpcionesPorRol(usuario) {
       {
         titulo: "Configuración del sistema",
         descripcion: "Ajustes generales, áreas académicas y parámetros del sistema.",
-        enlace: "",
+        enlace: "configuracion.html",
         icono: "⚙️",
-        disponible: false
+        disponible: true
       }
     ];
   }
@@ -369,16 +383,16 @@ function obtenerOpcionesPorRol(usuario) {
       {
         titulo: "Registrar incidencia",
         descripcion: "Reportar sucesos de seguridad o ingreso vehicular.",
-        enlace: "",
+        enlace: "incidencias.html",
         icono: "⚠️",
-        disponible: false
+        disponible: true
       },
       {
         titulo: "Vehículos restringidos",
         descripcion: "Ver lista rápida de vehículos no autorizados.",
-        enlace: "",
+        enlace: "vehiculos-restringidos.html",
         icono: "⛔",
-        disponible: false
+        disponible: true
       }
     ];
   }

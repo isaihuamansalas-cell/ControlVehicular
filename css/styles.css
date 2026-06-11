@@ -1070,3 +1070,163 @@ input:disabled {
     font-size: 30px;
   }
 }
+
+/* ========================= */
+/* INCIDENCIAS DE SEGURIDAD */
+/* ========================= */
+
+.incident-status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.incident-open {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.incident-review {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.incident-closed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.priority-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.priority-normal {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.priority-important {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.priority-urgent {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.description-cell {
+  max-width: 260px;
+  white-space: normal;
+  line-height: 1.4;
+}
+
+/* ========================= */
+/* VEHÍCULOS RESTRINGIDOS */
+/* ========================= */
+
+.restricted-alert {
+  background: #fee2e2;
+  color: #991b1b;
+  border-left: 6px solid #dc2626;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.pending-alert {
+  background: #fef9c3;
+  color: #854d0e;
+  border-left: 6px solid #facc15;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.safe-alert {
+  background: #dcfce7;
+  color: #166534;
+  border-left: 6px solid #22c55e;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.incident-count {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background: #e0f2fe;
+  color: #075985;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* ========================= */
+/* CONFIGURACIÓN DEL SISTEMA */
+/* ========================= */
+
+.config-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.config-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #2563eb;
+  padding: 14px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.config-item strong {
+  color: #1e293b;
+}
+
+.config-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 15px;
+}
+
+.config-preview div {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 18px;
+  border-radius: 14px;
+}
+
+.config-preview strong {
+  display: block;
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.config-preview span {
+  color: #1e3a8a;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input[type="color"] {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 5px;
+  background: white;
+}

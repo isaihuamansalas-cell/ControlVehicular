@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniConnect - Configuración</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="dashboard-body">
+
+  <header class="topbar">
+    <div>
+      <h2>UniConnect</h2>
+      <p>Configuración del sistema</p>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="backBtn" class="secondary-btn">Volver</button>
+      <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+
+    <section class="welcome-card">
+      <h1>Configuración del sistema</h1>
+      <p>
+        Administra los parámetros principales de UniConnect: nombre institucional,
+        áreas académicas, cursos, nota mínima y límite de faltas.
+      </p>
+    </section>
+
+    <section class="form-section">
+      <h2>Parámetros generales</h2>
+
+      <form id="generalConfigForm" class="user-form">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombreUniversidad">Nombre de la universidad</label>
+            <input type="text" id="nombreUniversidad" required>
+          </div>
+
+          <div class="form-group">
+            <label for="colorInstitucional">Color institucional</label>
+            <input type="color" id="colorInstitucional" value="#1e3a8a">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="notaMinimaConfig">Nota mínima aprobatoria</label>
+            <input type="number" id="notaMinimaConfig" min="0" max="20" step="0.1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="limiteFaltasConfig">Límite de faltas para riesgo</label>
+            <input type="number" id="limiteFaltasConfig" min="1" max="30" required>
+          </div>
+        </div>
+
+        <button type="submit">Guardar configuración general</button>
+      </form>
+
+      <p id="generalConfigMessage" class="message"></p>
+    </section>
+
+    <section class="form-section">
+      <h2>Áreas académicas</h2>
+
+      <form id="areaForm" class="user-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombreArea">Nueva área académica</label>
+            <input type="text" id="nombreArea" placeholder="Ejemplo: Arquitectura" required>
+          </div>
+
+          <div class="form-group">
+            <label>&nbsp;</label>
+            <button type="submit">Agregar área</button>
+          </div>
+        </div>
+      </form>
+
+      <p id="areaMessage" class="message"></p>
+
+      <div id="areasList" class="config-list"></div>
+    </section>
+
+    <section class="form-section">
+      <h2>Cursos por área</h2>
+
+      <form id="courseForm" class="user-form">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombreCurso">Nombre del curso</label>
+            <input type="text" id="nombreCurso" placeholder="Ejemplo: Matemática I" required>
+          </div>
+
+          <div class="form-group">
+            <label for="areaCurso">Área académica</label>
+            <select id="areaCurso" required></select>
+          </div>
+        </div>
+
+        <button type="submit">Agregar curso</button>
+      </form>
+
+      <p id="courseMessage" class="message"></p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Curso</th>
+              <th>Área</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+
+          <tbody id="coursesTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <h2>Resumen de configuración</h2>
+
+      <div class="config-preview">
+        <div>
+          <strong>Universidad</strong>
+          <span id="previewUniversity">-</span>
+        </div>
+
+        <div>
+          <strong>Nota mínima</strong>
+          <span id="previewGrade">-</span>
+        </div>
+
+        <div>
+          <strong>Límite de faltas</strong>
+          <span id="previewAbsences">-</span>
+        </div>
+
+        <div>
+          <strong>Total de áreas</strong>
+          <span id="previewAreas">-</span>
+        </div>
+
+        <div>
+          <strong>Total de cursos</strong>
+          <span id="previewCourses">-</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/configuracion.js"></script>
+</body>
+</html>

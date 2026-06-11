@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const dniAlumnoAsistencia = document.getElementById("dniAlumnoAsistencia");
   const clearSignatureBtn = document.getElementById("clearSignatureBtn");
   const searchAttendance = document.getElementById("searchAttendance");
+  llenarSelectCursos("cursoAsistencia", "Seleccione un curso");
 
   if (backBtn) {
     backBtn.addEventListener("click", function() {

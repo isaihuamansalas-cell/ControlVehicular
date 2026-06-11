@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const gradesFormSection = document.getElementById("gradesFormSection");
   const dniAlumnoNota = document.getElementById("dniAlumnoNota");
   const searchGrades = document.getElementById("searchGrades");
+  llenarSelectCursos("cursoNota", "Seleccione un curso");
+cargarNotaMinimaConfigurada();
 
   if (backBtn) {
     backBtn.addEventListener("click", function() {
@@ -163,26 +165,15 @@ function contarFaltasAlumno(dniAlumno, curso) {
 }
 
 function calcularEstadoAcademico(promedio, notaMinima, faltas) {
-  /*
-    Regla del semáforo:
-    🔴 Crítico:
-       - Promedio menor a la nota mínima.
-       - O tiene 4 o más faltas.
+  const limiteFaltas = obtenerLimiteFaltasSistema();
 
-    🟡 Advertencia:
-       - Promedio entre la nota mínima y 13.
-       - O tiene 3 faltas.
+  const faltasAdvertencia = limiteFaltas - 1;
 
-    🟢 Aprobado:
-       - Promedio mayor a 13.
-       - Y tiene menos de 3 faltas.
-  */
-
-  if (promedio < notaMinima || faltas >= 4) {
+  if (promedio < notaMinima || faltas >= limiteFaltas) {
     return "Crítico / Jalado";
   }
 
-  if ((promedio >= notaMinima && promedio <= 13) || faltas === 3) {
+  if ((promedio >= notaMinima && promedio <= 13) || faltas === faltasAdvertencia) {
     return "Advertencia";
   }
 
@@ -230,7 +221,7 @@ function guardarNotas(
 
   document.getElementById("gradesForm").reset();
 
-  document.getElementById("notaMinima").value = 11;
+  document.getElementById("notaMinima").value = obtenerNotaMinimaSistema();
 
   mostrarMensajeNotas("Notas registradas correctamente.", "success");
 
@@ -412,4 +403,13 @@ function mostrarMensajeNotas(texto, tipo) {
     gradesMessage.textContent = "";
     gradesMessage.className = "message";
   }, 3000);
+}
+function cargarNotaMinimaConfigurada() {
+  const notaMinimaInput = document.getElementById("notaMinima");
+
+  if (!notaMinimaInput) {
+    return;
+  }
+
+  notaMinimaInput.value = obtenerNotaMinimaSistema();
 }

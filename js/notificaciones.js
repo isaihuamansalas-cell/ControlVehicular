@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const notificationFormSection = document.getElementById("notificationFormSection");
   const searchNotification = document.getElementById("searchNotification");
   const nivelNotificacion = document.getElementById("nivelNotificacion");
+  llenarSelectAreas("areaNotificacion", "No aplica");
+llenarSelectCursos("cursoNotificacion", "Seleccione un curso");
 
   if (backBtn) {
     backBtn.addEventListener("click", function() {
@@ -42,6 +44,13 @@ document.addEventListener("DOMContentLoaded", function() {
       ajustarCamposPorNivel();
     });
   }
+  const areaNotificacion = document.getElementById("areaNotificacion");
+
+if (areaNotificacion) {
+  areaNotificacion.addEventListener("change", function() {
+    llenarSelectCursosPorArea("cursoNotificacion", areaNotificacion.value, "Seleccione un curso");
+  });
+}
 
   crearNotificacionesIniciales();
   ajustarCamposPorNivel();

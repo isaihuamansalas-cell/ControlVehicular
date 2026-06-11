@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniConnect - Vehículos Restringidos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="dashboard-body">
+
+  <header class="topbar">
+    <div>
+      <h2>UniConnect</h2>
+      <p>Vehículos restringidos y alertas</p>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="backBtn" class="secondary-btn">Volver</button>
+      <button id="logoutBtn" class="logout-btn">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+
+    <section class="welcome-card">
+      <h1>Vehículos restringidos</h1>
+      <p>
+        Consulta rápidamente vehículos restringidos, pendientes e incidencias asociadas
+        a placas registradas dentro del campus.
+      </p>
+    </section>
+
+    <section class="report-summary">
+      <div class="summary-card">
+        <h3 id="totalRestringidos">0</h3>
+        <p>Restringidos</p>
+      </div>
+
+      <div class="summary-card">
+        <h3 id="totalPendientes">0</h3>
+        <p>Pendientes</p>
+      </div>
+
+      <div class="summary-card">
+        <h3 id="totalAutorizados">0</h3>
+        <p>Autorizados</p>
+      </div>
+
+      <div class="summary-card">
+        <h3 id="totalIncidenciasPlaca">0</h3>
+        <p>Incidencias con placa</p>
+      </div>
+    </section>
+
+    <section class="table-section">
+      <h2>Filtro de búsqueda</h2>
+
+      <div class="market-filters">
+        <input 
+          type="text" 
+          id="searchRestrictedVehicle" 
+          placeholder="Buscar por placa, propietario, DNI, área, marca, modelo o color..."
+        >
+
+        <select id="filterVehicleStatus">
+          <option value="">Todos los estados</option>
+          <option value="Restringido">Restringido</option>
+          <option value="Pendiente">Pendiente</option>
+          <option value="Autorizado">Autorizado</option>
+        </select>
+
+        <select id="filterVehicleType">
+          <option value="">Todos los tipos</option>
+          <option value="Auto">Auto</option>
+          <option value="Moto">Moto</option>
+          <option value="Camioneta">Camioneta</option>
+          <option value="Bicicleta">Bicicleta</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="table-section">
+      <h2>Vehículos bajo control de seguridad</h2>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Placa</th>
+              <th>Propietario</th>
+              <th>DNI</th>
+              <th>Área</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Color</th>
+              <th>Tipo</th>
+              <th>Estado</th>
+              <th>Incidencias</th>
+              <th>Observación</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+
+          <tbody id="restrictedVehiclesTableBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="table-section">
+      <h2>Incidencias asociadas a placas</h2>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Placa</th>
+              <th>Tipo</th>
+              <th>Prioridad</th>
+              <th>Estado</th>
+              <th>Ubicación</th>
+              <th>Registrado por</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+
+          <tbody id="plateIncidentsTableBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/vehiculos-restringidos.js"></script>
+</body>
+</html>
