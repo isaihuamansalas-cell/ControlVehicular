@@ -41,17 +41,19 @@
 
       <p id="loginMessage" class="message"></p>
 
-      <div class="test-users">
-        <h3>Usuarios de prueba</h3>
-        <p><strong>Admin:</strong> admin@uni.edu / 123456</p>
-        <p><strong>Profesor:</strong> profesor@uni.edu / 123456</p>
-        <p><strong>Alumno:</strong> alumno@uni.edu / 123456</p>
-        <p><strong>Seguridad:</strong> seguridad@uni.edu / 123456</p>
-      </div>
+    
     </section>
 
   </main>
 
-  <script src="js/auth.js"></script>
+ <!-- 1. Librería oficial -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- 2. Conexión -->
+<script src="js/supabase.js"></script>
+
+<!-- 3. Autenticación -->
+<script src="js/auth.js"></script>
 </body>
 </html>
+

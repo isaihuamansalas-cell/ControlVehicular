@@ -184,7 +184,15 @@
 
   </main>
 
-  <script src="js/auth.js"></script>
-  <script src="js/vehiculos.js"></script>
+ <!-- 1. Primero la librería oficial (siempre la primera) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- 2. Luego tu conexión -->
+<script src="js/supabase.js"></script>
+
+<!-- 3. Luego tus archivos del sistema -->
+<script src="js/auth.js"></script>
+<script src="js/vehiculos.js"></script>
+<script src="js/conexion-prueba.js"></script>
 </body>
 </html>
